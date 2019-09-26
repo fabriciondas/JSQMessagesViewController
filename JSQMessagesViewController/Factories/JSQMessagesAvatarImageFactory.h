@@ -69,6 +69,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (JSQMessagesAvatarImage *)avatarImageWithImage:(UIImage *)image;
 
+
+/**
+ *  Creates and returns a `JSQMessagesAvatarImage` object with the specified image that is
+ *  cropped to a circle of the given diameter and used for the `avatarImage` and `avatarPlaceholderImage` properties
+ *  of the returned `JSQMessagesAvatarImage` object. This image is then copied and has a transparent black mask applied to it,
+ *  which is used for the `avatarHighlightedImage` property of the returned `JSQMessagesAvatarImage` object.
+ *  Added DIAMETER parameter
+ *
+ *  @param image    An image object that represents an avatar image. This value must not be `nil`.
+ *  @param diameter An integer value specifying the diameter size of the image in points. This value must be greater than `0`.
+ *
+ *  @return An initialized `JSQMessagesAvatarImage` object.
+ */
+- (JSQMessagesAvatarImage *)avatarImageWithImage:(UIImage *)image diameter:(NSUInteger)diameter;
+
+
 /**
  *  Returns a copy of the specified image that is cropped to a circle with the given diameter.
  *
