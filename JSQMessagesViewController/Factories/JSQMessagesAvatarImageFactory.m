@@ -70,23 +70,6 @@
                                               placeholderImage:avatar];
 }
 
-
-- (JSQMessagesAvatarImage *)avatarImageWithImage:(UIImage *)image
-                                        diameter:(NSUInteger)diameter
-{
-    NSParameterAssert(diameter > 0);
-       
-    _diameter = diameter;
-    
-    UIImage *avatar = [self circularAvatarImage:image];
-    UIImage *highlightedAvatar = [self circularAvatarHighlightedImage:image];
-
-    return [[JSQMessagesAvatarImage alloc] initWithAvatarImage:avatar
-                                              highlightedImage:highlightedAvatar
-                                              placeholderImage:avatar];
-}
-
-
 - (UIImage *)circularAvatarImage:(UIImage *)image
 {
     return [self jsq_circularImage:image
